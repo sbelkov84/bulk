@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------
 const std::size_t gN = 5;
 //------------------------------------------------------------------------
-
+/*
 TEST(BULK, OnSpaceBulkEnding)
 {
   std::string Printed;
@@ -93,7 +93,7 @@ TEST(BULK, OnBraceInclusion)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
 }
 //------------------------------------------------------------------------
-
+*/
 TEST(BULK, OnUnfinishedBulk)
 {
   std::string Printed;
