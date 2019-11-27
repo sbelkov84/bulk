@@ -17,33 +17,13 @@ void TSingleBulk::Print(std::ostream& Stream)
   if (Commands.size() == 0)
     return;
   //---
-  //std::cout << "bulk: ";
   Stream << "bulk: ";
   for (auto It = Commands.begin(); It != Commands.end(); ++It)
   {
-    //std::cout << *It << " ";
     Stream << *It << " ";
   }
-  //std::cout << std::endl;
   Stream << std::endl;
 }
-//------------------------------------------------------------------------
-
-//void TFixedBulk::ExecCmd(std::string &Cmd)
-//{
-//  if (Cmd == "{" || Cmd.empty())
-//  {
-//    PrintAndClear();
-//  }
-//  else
-//  {
-//    if (Commands.size() == N)
-//    {
-//      PrintAndClear();
-//    }
-//    AddCmd(Cmd);
-//  }
-//}
 //------------------------------------------------------------------------
 
 void TSingleBulk::AddCmd(std::string& Cmd)
@@ -75,17 +55,14 @@ void TSingleBulk::ReleaseBulk(bool NeedToPrint)
 }
 //------------------------------------------------------------------------
 
-#include <windows.h>
 void TSingleBulk::SaveToFile()
 {
   if (Commands.empty())
     return;
   //---
-  char TimeStamp[40];
-  std::strftime(TimeStamp, 40, "%H%M%S", std::localtime(&FirstCmdTime));
-  std::string BulkTime = TimeStamp;
+  std::string BulkTime = std::to_string(FirstCmdTime);
   std::string FileName = "./logs/bulk";
-  FileName += TimeStamp;
+  FileName += BulkTime;
   FileName += ".log";
   std::ofstream OutFile(FileName, std::ios::binary);
 
@@ -98,49 +75,5 @@ void TSingleBulk::SaveToFile()
     OutFile.close();
   }
   OutFile.close();
-
-  std::cout << FileName << std::endl;
 }
 //------------------------------------------------------------------------
-//------------------------------------------------------------------------
-//------------------------------------------------------------------------
-/*
-TDynamicBulk::TDynamicBulk(TBulkManager* Manager)
-{
-  Manager->Subscribe(this);
-}*/
-//------------------------------------------------------------------------
-
-//void TDynamicBulk::PrintAndClear()
-//{
-//  TFixedBulk::PrintAndClear();
-//  SetBrackCountersToZero();
-//}
-//------------------------------------------------------------------------
-
-//void TDynamicBulk::ExecCmd(std::string &Cmd)
-//{
-//  if (Cmd == "{")
-//  {
-//    ++OpeningCount;
-//  }
-//  else if (Cmd == "}")
-//  {
-//    ++ClosingCount;
-//    if (IsClosed())
-//    {
-//      PrintAndClear();
-//    }
-//  }
-//  else if (Cmd.empty())
-//  {
-//    SetBrackCountersToZero();
-//    ClearCmds();
-//  }
-//  else
-//  {
-//    AddCmd(Cmd);
-//  }
-//}
-//------------------------------------------------------------------------
-

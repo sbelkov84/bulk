@@ -5,7 +5,6 @@
 #include <string>
 //------------------------------------------------------------------------
 
-#include <thread>
 int main(int argc, char** argv)
 {
   std::string BulkSize;
@@ -25,7 +24,6 @@ int main(int argc, char** argv)
     std::cout << "Please set BulkSize cmd parameter greater than 0" << std::endl;
     return 1;
   }
-
 
   if (N == 0)
   {

@@ -8,11 +8,8 @@
 
 TBulkManager::TBulkManager()
 {
-  //std::filesystem::create_directory("./logs");
-  //std::string Path = "./logs";
-  //boost::filesystem::path Path{"./logs"};
-  //boost::filesystem::create_directory(Path);
-  std::cout << "constr" << std::endl;
+  boost::filesystem::path Path{L"./logs"};
+  boost::filesystem::create_directory(Path);
 }
 //------------------------------------------------------------------------
 
@@ -34,10 +31,6 @@ void TBulkManager::ExecCmd(std::string Cmd)
   if (Cmd == "{")
   {
     BulkSubs[eBulkTypeFixed]->ReleaseBulk();
-//    if (IsDynClosed())
-//    {
-//      BulkSubs[eBulkTypeDynamic]->ReleaseBulk();
-//    }
     ++OpeningCount;
   }
   else if (Cmd == "}")

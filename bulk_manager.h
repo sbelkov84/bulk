@@ -15,8 +15,12 @@ enum EBulkType
 
 struct TBulkObserver
 {
+  /*! \brief Interface add-command in bulk method */
+  /*! virtual void AddCmd(std::string& Cmd) */
   virtual void AddCmd(std::string& Cmd) = 0;
 
+  /*! \brief Interface release-command from bulk method */
+  /*! virtual void ReleaseBulk(bool NeedToPrint = true) */
   virtual void ReleaseBulk(bool NeedToPrint = true) = 0;
 };
 //------------------------------------------------------------------------
