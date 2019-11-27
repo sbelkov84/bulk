@@ -38,12 +38,10 @@ add_executable(bulk main.cpp)
 add_library(bulk_lib bulk_manager.h bulk_manager.cpp single_bulk.h single_bulk.cpp)
 add_executable(test_bulk test_bulk.cpp)
 
-set(CMAKE_CXX_FLAGS)
-set_target_properties(bulk bulk_lib
+set_target_properties(bulk bulk_lib test_bulk
     PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
-    LINKER_LANGUAGE CXX
 )
 
 set_target_properties(bulk_lib PROPERTIES
