@@ -13,11 +13,11 @@ set(Boost_NO_BOOST_CMAKE ON)
 
 if (WIN32)  
   set(Boost_ARCHITECTURE "-x32")
+  
+  set(BOOST_USE_STATIC_LIBS ON)
+  set(BOOST_USE_MULTITHREADED ON)
+  set(BOOST_USE_STATIC_RUNTIME ON)
 endif()
-
-set(BOOST_USE_STATIC_LIBS ON)
-set(BOOST_USE_MULTITHREADED ON)
-set(BOOST_USE_STATIC_RUNTIME ON)
 
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 
@@ -42,7 +42,7 @@ set_target_properties(bulk bulk_lib
 
 set_target_properties(bulk_lib PROPERTIES
     #COMPILE_DEFINITIONS #BOOST_FILESYSTEM_DYN_LINK
-    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIRS}
+    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
 target_include_directories(bulk_lib
