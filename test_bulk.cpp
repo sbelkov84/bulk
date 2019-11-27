@@ -2,6 +2,8 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 //------------------------------------------------------------------------
+const std::size_t gN = 5;
+//------------------------------------------------------------------------
 
 TEST(BULK, OnSpaceBulkEnding)
 {
@@ -9,7 +11,7 @@ TEST(BULK, OnSpaceBulkEnding)
   testing::internal::CaptureStdout();
 
   TBulkManager BulkManager;
-  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, N);
+  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, gN);
   TSingleBulk DynamicBulk(&BulkManager, eBulkTypeDynamic);
 
   BulkManager.ExecCmd("cmd1");
@@ -38,7 +40,7 @@ TEST(BULK, OnSpaceAndBraceEnding)
   testing::internal::CaptureStdout();
 
   TBulkManager BulkManager;
-  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, N);
+  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, gN);
   TSingleBulk DynamicBulk(&BulkManager, eBulkTypeDynamic);
 
   BulkManager.ExecCmd("cmd1");
@@ -69,7 +71,7 @@ TEST(BULK, OnBraceInclusion)
   testing::internal::CaptureStdout();
 
   TBulkManager BulkManager;
-  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, N);
+  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, gN);
   TSingleBulk DynamicBulk(&BulkManager, eBulkTypeDynamic);
 
   BulkManager.ExecCmd("{");
@@ -95,7 +97,7 @@ TEST(BULK, OnUnfinishedBulk)
   std::string Printed;
   testing::internal::CaptureStdout();
   TBulkManager BulkManager;
-  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, N);
+  TSingleBulk FixedBulk(&BulkManager, eBulkTypeFixed, gN);
   TSingleBulk DynamicBulk(&BulkManager, eBulkTypeDynamic);
 
   BulkManager.ExecCmd("cmd1");
