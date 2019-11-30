@@ -114,7 +114,7 @@ TEST(BULK, OnUnfinishedBulk)
   std::string Etalon = "bulk: cmd1 cmd2 cmd3";
 
   Printed = testing::internal::GetCapturedStdout();
-  EXPECT_EQ(Printed, Etalon);
+  EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
 }
 //------------------------------------------------------------------------
 
