@@ -66,7 +66,7 @@ TEST(BULK, OnSpaceAndBraceEnding)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);    
 }
 //------------------------------------------------------------------------
-/*
+
 TEST(BULK, OnBraceInclusion)
 {
   std::string Printed;
@@ -93,7 +93,7 @@ TEST(BULK, OnBraceInclusion)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
 }
 //------------------------------------------------------------------------
-
+/*
 TEST(BULK, OnUnfinishedBulk)
 {
   std::string Printed;
