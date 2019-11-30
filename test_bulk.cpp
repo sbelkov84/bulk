@@ -34,7 +34,7 @@ TEST(BULK, OnSpaceBulkEnding)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);   
 }
 //------------------------------------------------------------------------
-
+/*
 TEST(BULK, OnSpaceAndBraceEnding)
 {
   std::string Printed;
@@ -117,7 +117,7 @@ TEST(BULK, OnUnfinishedBulk)
   EXPECT_EQ(Printed, Etalon);
 }
 //------------------------------------------------------------------------
-
+*/
 int main(int argc, char** argv)
 {
   testing::InitGoogleTest(&argc, argv);
