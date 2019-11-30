@@ -111,7 +111,7 @@ TEST(BULK, OnUnfinishedBulk)
   BulkManager.ExecCmd("cmd6");
   BulkManager.ExecCmd("cmd7");
 
-  std::string Etalon = "cmd1 cmd2 cmd3 \n";
+  std::string Etalon = "cmd1 cmd2 cmd3";
 
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed, Etalon);
