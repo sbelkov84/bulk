@@ -34,7 +34,7 @@ TEST(BULK, OnSpaceBulkEnding)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);   
 }
 //------------------------------------------------------------------------
-/*
+
 TEST(BULK, OnSpaceAndBraceEnding)
 {
   std::string Printed;
@@ -49,7 +49,7 @@ TEST(BULK, OnSpaceAndBraceEnding)
   BulkManager.ExecCmd("cmd3");
   BulkManager.ExecCmd("{");
   
-  std::string Etalon = "cmd1 cmd2 cmd3";
+  std::string Etalon = "bulk: cmd1 cmd2 cmd3";
 
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);    
@@ -61,7 +61,7 @@ TEST(BULK, OnSpaceAndBraceEnding)
   BulkManager.ExecCmd("cmd7");
   BulkManager.ExecCmd("}");
   
-  Etalon = "cmd4 cmd5 cmd6 cmd7";
+  Etalon = "bulk: cmd4 cmd5 cmd6 cmd7";
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);    
 }
@@ -87,7 +87,7 @@ TEST(BULK, OnBraceInclusion)
   BulkManager.ExecCmd("cmd6");
   BulkManager.ExecCmd("}");
 
-  std::string Etalon = "cmd1 cmd2 cmd3 cmd4 cmd5 cmd6";
+  std::string Etalon = "bulk: cmd1 cmd2 cmd3 cmd4 cmd5 cmd6";
 
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
@@ -111,13 +111,13 @@ TEST(BULK, OnUnfinishedBulk)
   BulkManager.ExecCmd("cmd6");
   BulkManager.ExecCmd("cmd7");
 
-  std::string Etalon = "cmd1 cmd2 cmd3";
+  std::string Etalon = "bulk: cmd1 cmd2 cmd3";
 
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed, Etalon);
 }
 //------------------------------------------------------------------------
-*/
+
 int main(int argc, char** argv)
 {
   testing::InitGoogleTest(&argc, argv);
