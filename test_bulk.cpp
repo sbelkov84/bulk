@@ -19,7 +19,7 @@ TEST(BULK, OnSpaceBulkEnding)
   BulkManager.ExecCmd("cmd3");
   BulkManager.ExecCmd("");
   
-  std::string Etalon = "cmd1 cmd2 cmd3";
+  std::string Etalon = "bulk: cmd1 cmd2 cmd3";
 
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);    
@@ -29,7 +29,7 @@ TEST(BULK, OnSpaceBulkEnding)
   BulkManager.ExecCmd("cmd5");
   BulkManager.ExecCmd("");
   
-  Etalon = "cmd4 cmd5";
+  Etalon = "bulk: cmd4 cmd5";
   Printed = testing::internal::GetCapturedStdout();
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);   
 }
