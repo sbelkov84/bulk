@@ -93,7 +93,7 @@ TEST(BULK, OnBraceInclusion)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
 }
 //------------------------------------------------------------------------
-/*
+
 TEST(BULK, OnUnfinishedBulk)
 {
   std::string Printed;
@@ -117,7 +117,7 @@ TEST(BULK, OnUnfinishedBulk)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
 }
 //------------------------------------------------------------------------
-*/
+
 int main(int argc, char** argv)
 {
   testing::InitGoogleTest(&argc, argv);

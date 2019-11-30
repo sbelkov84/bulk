@@ -10,6 +10,7 @@ TBulkManager::TBulkManager()
 {
   boost::filesystem::path Path{L"./logs"};
   boost::filesystem::create_directory(Path);
+  SetBrackCountersToZero();
 }
 //------------------------------------------------------------------------
 
