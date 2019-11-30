@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------
 const std::size_t gN = 5;
 //------------------------------------------------------------------------
-/*
+
 TEST(BULK, OnSpaceBulkEnding)
 {
   std::string Printed;
@@ -17,7 +17,7 @@ TEST(BULK, OnSpaceBulkEnding)
   BulkManager.ExecCmd("cmd1");
   BulkManager.ExecCmd("cmd2");
   BulkManager.ExecCmd("cmd3");
-  BulkManager.ExecCmd(" ");
+  BulkManager.ExecCmd("");
   
   std::string Etalon = "cmd1 cmd2 cmd3";
 
@@ -27,7 +27,7 @@ TEST(BULK, OnSpaceBulkEnding)
   testing::internal::CaptureStdout();
   BulkManager.ExecCmd("cmd4");
   BulkManager.ExecCmd("cmd5");
-  BulkManager.ExecCmd(" ");
+  BulkManager.ExecCmd("");
   
   Etalon = "cmd4 cmd5";
   Printed = testing::internal::GetCapturedStdout();
@@ -93,7 +93,7 @@ TEST(BULK, OnBraceInclusion)
   EXPECT_EQ(Printed.compare(0, Etalon.length(), Etalon), 0);
 }
 //------------------------------------------------------------------------
-*/
+
 TEST(BULK, OnUnfinishedBulk)
 {
   std::string Printed;
